@@ -1,0 +1,34 @@
+[[pages]]
+path = "home_content.py"
+name = "Dealing Dashboard"
+icon = "🏠"
+
+[[pages]]
+name = "Broker Stats"
+icon = "📈"
+is_section = true
+
+[[pages]]
+path = "pages/broker_stats/broker_flow.py"
+name = "Broker Flow"
+icon = "🔄"
+
+[[pages]]
+path = "pages/broker_stats/winning_trades.py"
+name = "Winning Trades"
+icon = "🏆"
+
+[[pages]]
+name = "CDS"
+icon = "💹"
+is_section = true
+
+[[pages]]
+path = "pages/cds/best_brokers.py"
+name = "Best Brokers"
+icon = "🌟"
+
+[[pages]]
+path = "pages/cds/quotes.py"
+name = "Quotes"
+icon = "💬"
