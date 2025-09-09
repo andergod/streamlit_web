@@ -1,3 +1,4 @@
+pygwalker
 streamlit
 pandas
 scikit-learn

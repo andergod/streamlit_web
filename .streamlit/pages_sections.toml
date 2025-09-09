@@ -14,8 +14,8 @@ name = "Broker Flow"
 icon = "🔄"
 
 [[pages]]
-path = "pages/broker_stats/winning_trades.py"
-name = "Winning Trades"
+path = "pages/broker_stats/counterparty_flows.py"
+name = "Counterparty Flows"
 icon = "🏆"
 
 [[pages]]
@@ -29,6 +29,6 @@ name = "Best Brokers"
 icon = "🌟"
 
 [[pages]]
-path = "pages/cds/quotes.py"
-name = "Quotes"
-icon = "💬"
+path = "pages/cds/full_report.py"
+name = "Full Report"
+icon = "📄"

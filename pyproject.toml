@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "streamlit-web"
+version = "1.0.0"
+description = "Usage of streamlit, showing different features"
+authors = ["Jesus Tuesta <anderson.tuestas@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false 
+
+[tool.poetry.dependencies]
+python = "3.11.10"
+pygwalker = "^0.4.9.15"
+streamlit = "^1.49.1"
+pandas = "^2.3.2"
+scikit-learn = "^1.7.1"
+st-pages = "^1.0.1"
+matplotlib = "^3.10.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

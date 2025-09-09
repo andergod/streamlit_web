@@ -1,7 +1,20 @@
 [server]
-headless = true
-runOnSave = true
+headless = true          # No browser auto-open
+runOnSave = true         # Rerun app on file save
+port = 8501              # Change default port
+
+[client]
+toolbarMode = "minimal"   # Cleaner toolbar (options: auto, minimal, viewer)
+showErrorDetails = false  # Hide long error stack traces in UI
 
 [theme]
-base = "light"
-primaryColor = "#4CAF50"
+base = "dark"                     # Dark mode (use "light" for light mode)
+primaryColor = "#00C896"          # Accent color (buttons, sliders, etc.)
+backgroundColor = "#0E1117"       # Main background
+secondaryBackgroundColor = "#262730"  # Sidebar / card background
+textColor = "#FAFAFA"             # Text color
+font = "sans serif"               # Options: "sans serif", "serif", "monospace"
+
+[global]
+disableWidgetStateDuplicationWarning = true
+showWarningOnDirectExecution = false

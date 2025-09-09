@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pygwalker.api.streamlit import StreamlitRenderer
 
 # --- Generate made-up data ---
 np.random.seed(123)
@@ -29,17 +30,27 @@ date_range = st.sidebar.slider(
     value=(dates.min().date(), dates.max().date()),
     key="date_slider"
 )
-region_sel = st.sidebar.multiselect("Select region(s)", regions, default=regions, key="region_multiselect")
 broker_sel = st.sidebar.multiselect("Select broker(s)", brokers, default=brokers, key="broker_multiselect")
 
 # --- Filter data ---
 mask = (
     (df["Date"].dt.date >= date_range[0])
     & (df["Date"].dt.date <= date_range[1])
-    & (df["Region"].isin(region_sel))
     & (df["Broker"].isin(broker_sel))
 )
+
 filtered = df[mask]
+
+st.subheader("Raw Data")
+st.dataframe(filtered)
+
+# st.subheader("Tahbleau-like Exploration")
+# pyg_app = StreamlitRenderer(filtered)
+# pyg_app.explorer()
+
+st.subheader("Showing the image already rendered from a JSON spec")
+pyg_app = StreamlitRenderer(filtered, theme="vega", spec = 'pages/CDS/pygJsons/quotes.json', debug = False)
+pyg_app.viewer()
 
 # --- Slippage estimation ---
 st.subheader("Average Slippage per Broker")
@@ -73,6 +84,3 @@ plt.suptitle("")
 plt.xlabel("Month")
 plt.ylabel("Slippage")
 st.pyplot(fig3, width='content')
-
-st.subheader("Raw Data")
-st.dataframe(filtered)
