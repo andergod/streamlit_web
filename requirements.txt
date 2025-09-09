@@ -4,3 +4,5 @@ pandas
 scikit-learn
 st-pages
 matplotlib
+plotly-express 
+ipykernel

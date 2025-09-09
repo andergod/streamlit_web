@@ -44,13 +44,11 @@ filtered = df[mask]
 st.subheader("Raw Data")
 st.dataframe(filtered)
 
-# st.subheader("Tahbleau-like Exploration")
-# pyg_app = StreamlitRenderer(filtered)
-# pyg_app.explorer()
-
 st.subheader("Showing the image already rendered from a JSON spec")
-pyg_app = StreamlitRenderer(filtered, theme="vega", spec = 'pages/CDS/pygJsons/quotes.json', debug = False)
-pyg_app.viewer()
+left, right = st.columns([2, 1])
+with left:
+    pyg_app = StreamlitRenderer(filtered, theme="vega", spec='pages/CDS/pygJsons/quotes.json', debug=False)
+    pyg_app.viewer()
 
 # --- Slippage estimation ---
 st.subheader("Average Slippage per Broker")
